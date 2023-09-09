@@ -1,5 +1,7 @@
 <?php
 
+use App\Filament\Resources\LearnContentResource\Api\LearnContentApiService;
+use App\Filament\Resources\LearnSerieResource\Api\LearnSerieApiService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+LearnSerieApiService::routes();
+LearnContentApiService::routes();
