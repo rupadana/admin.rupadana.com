@@ -24,7 +24,9 @@ class LearnSerie extends Model
     ];
 
     protected $casts = [
-        'level' => SerieLevel::class
+        'level' => SerieLevel::class,
+        'is_new' => 'boolean',
+        'is_show' => 'boolean'
     ];
 
     public function image(): BelongsTo
