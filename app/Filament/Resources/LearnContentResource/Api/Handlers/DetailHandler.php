@@ -20,6 +20,13 @@ class DetailHandler extends Handlers
 
         $query = QueryBuilder::for(
             $model
+                ->select([
+                    'learn_series.id as idLearn',
+                    'learn_series.slug as slugLearn',
+                    'learn_series.title as titleLearn',
+                    'learn_series.description as descriptionLearn',
+                    'learn_contents.*'
+                ])
                 ->join('learn_series', 'learn_series.id', 'series_id')
                 ->where(static::getKeyName(), $content_slug)
                 ->where('learn_series.slug', $id)
