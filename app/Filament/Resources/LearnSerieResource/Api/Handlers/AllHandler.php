@@ -2,14 +2,15 @@
 
 namespace App\Filament\Resources\LearnSerieResource\Api\Handlers;
 
+use App\Filament\Resources\LearnSerieResource;
 use Illuminate\Http\Request;
 use Rupadana\ApiService\Http\Handlers;
-use App\Filament\Resources\LearnSerieResource;
 
 class AllHandler extends Handlers
 {
-    public static string | null $uri = '/all';
-    public static string | null $resource = LearnSerieResource::class;
+    public static ?string $uri = '/all';
+
+    public static ?string $resource = LearnSerieResource::class;
 
     public static function getMethod()
     {

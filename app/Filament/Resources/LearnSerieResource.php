@@ -5,11 +5,9 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\LearnSerieResource\Api\Transformers\LearnSerieTransformer;
 use App\Filament\Resources\LearnSerieResource\Enums\SerieLevel;
 use App\Filament\Resources\LearnSerieResource\Pages;
-use App\Filament\Resources\LearnSerieResource\RelationManagers;
 use App\Filament\Resources\LearnSerieResource\RelationManagers\LearnContentsRelationManager;
 use App\Models\LearnSerie;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
-use Filament\Forms;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -22,8 +20,6 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class LearnSerieResource extends Resource
 {
@@ -99,7 +95,7 @@ class LearnSerieResource extends Resource
     public static function getRelations(): array
     {
         return [
-            LearnContentsRelationManager::class
+            LearnContentsRelationManager::class,
         ];
     }
 

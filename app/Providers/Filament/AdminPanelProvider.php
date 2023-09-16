@@ -24,17 +24,17 @@ class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
-        Radio::configureUsing(function(Radio $radio) {
+        Radio::configureUsing(function (Radio $radio) {
             $radio->inline();
         });
-        
+
         return $panel
             ->default()
             ->id('admin')
             ->path('admin')
             ->login()
             ->plugins([
-                CuratorPlugin::make()
+                CuratorPlugin::make(),
             ])
             ->colors([
                 'primary' => Color::Amber,

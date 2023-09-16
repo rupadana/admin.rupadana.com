@@ -1,15 +1,16 @@
 <?php
+
 namespace App\Filament\Resources\BookmarkResource\Api\Handlers;
 
-use Illuminate\Http\Request;
-use Rupadana\ApiService\Http\Handlers;
 use App\Filament\Resources\BookmarkResource;
+use Rupadana\ApiService\Http\Handlers;
 use Spatie\QueryBuilder\QueryBuilder;
 
-class AllHandler extends Handlers {
-    public static string | null $uri = '/all';
-    public static string | null $resource = BookmarkResource::class;
+class AllHandler extends Handlers
+{
+    public static ?string $uri = '/all';
 
+    public static ?string $resource = BookmarkResource::class;
 
     public function handler()
     {

@@ -3,23 +3,18 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\LearnContentResource\Pages;
-use App\Filament\Resources\LearnContentResource\RelationManagers;
 use App\Filament\Resources\LearnSerieResource\Enums\SerieLevel;
 use App\Models\LearnContent;
-use Filament\Forms;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Radio;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Actions\CreateAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class LearnContentResource extends Resource
 {
@@ -46,9 +41,8 @@ class LearnContentResource extends Resource
                     ->required(),
                 TextInput::make('slug')
                     ->required(),
-                Textarea::make('content')
+                MarkdownEditor::make('content')
                     ->columnSpanFull()
-                    ->rows(10)
                     ->required(),
                 TextInput::make('category')
                     ->required(),

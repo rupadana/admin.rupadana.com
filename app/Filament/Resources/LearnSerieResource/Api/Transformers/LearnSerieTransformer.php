@@ -1,11 +1,11 @@
 <?php
+
 namespace App\Filament\Resources\LearnSerieResource\Api\Transformers;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class LearnSerieTransformer extends JsonResource
 {
-
     /**
      * Transform the resource into an array.
      *
@@ -16,7 +16,7 @@ class LearnSerieTransformer extends JsonResource
     {
         return [
             ...$this->resource->toArray(),
-            'image' => $this->image
+            'image' => $this->image,
         ];
     }
 }

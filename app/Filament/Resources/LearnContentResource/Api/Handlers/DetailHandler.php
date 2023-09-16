@@ -2,15 +2,15 @@
 
 namespace App\Filament\Resources\LearnContentResource\Api\Handlers;
 
-use App\Filament\Resources\SettingResource;
 use App\Filament\Resources\LearnContentResource;
 use Rupadana\ApiService\Http\Handlers;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class DetailHandler extends Handlers
 {
-    public static string | null $uri = '/{id}/{content_slug}';
-    public static string | null $resource = LearnContentResource::class;
+    public static ?string $uri = '/{id}/{content_slug}';
+
+    public static ?string $resource = LearnContentResource::class;
 
     protected static string $keyName = 'learn_contents.slug';
 
@@ -25,7 +25,7 @@ class DetailHandler extends Handlers
                     'learn_series.slug as slugLearn',
                     'learn_series.title as titleLearn',
                     'learn_series.description as descriptionLearn',
-                    'learn_contents.*'
+                    'learn_contents.*',
                 ])
                 ->join('learn_series', 'learn_series.id', 'series_id')
                 ->where(static::getKeyName(), $content_slug)
@@ -33,7 +33,9 @@ class DetailHandler extends Handlers
         )
             ->first();
 
-        if (!$query) return static::sendNotFoundResponse();
+        if (! $query) {
+            return static::sendNotFoundResponse();
+        }
 
         $transformer = static::getApiTransformer();
 

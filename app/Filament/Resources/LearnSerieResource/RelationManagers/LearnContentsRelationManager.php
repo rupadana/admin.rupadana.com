@@ -3,9 +3,9 @@
 namespace App\Filament\Resources\LearnSerieResource\RelationManagers;
 
 use App\Filament\Resources\LearnContentResource;
-use Filament\Tables\Actions\CreateAction;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Tables\Actions\CreateAction;
 use Filament\Tables\Table;
 
 class LearnContentsRelationManager extends RelationManager
@@ -20,8 +20,8 @@ class LearnContentsRelationManager extends RelationManager
     public function table(Table $table): Table
     {
         return LearnContentResource::table($table)
-        ->headerActions([
-            CreateAction::make()
-        ]);
+            ->headerActions([
+                CreateAction::make(),
+            ]);
     }
 }

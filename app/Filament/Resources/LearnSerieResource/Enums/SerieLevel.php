@@ -12,7 +12,6 @@ enum SerieLevel: string implements HasColor, HasLabel
     case Advanced = 'advanced';
     case AllLevels = 'all-levels';
 
-
     public function getColor(): string|array|null
     {
         return match ($this) {

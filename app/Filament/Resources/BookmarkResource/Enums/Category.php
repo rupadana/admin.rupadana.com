@@ -12,7 +12,6 @@ enum Category: string implements HasLabel
     case Video = 'video';
     case Portofolio = 'portofolio';
 
-
     public function getLabel(): ?string
     {
         return match ($this) {

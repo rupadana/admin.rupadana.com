@@ -26,7 +26,7 @@ class LearnSerie extends Model
     protected $casts = [
         'level' => SerieLevel::class,
         'is_new' => 'boolean',
-        'is_show' => 'boolean'
+        'is_show' => 'boolean',
     ];
 
     public function image(): BelongsTo
@@ -34,7 +34,7 @@ class LearnSerie extends Model
         return $this->belongsTo(Media::class, 'image_id');
     }
 
-    public function learn_contents() : HasMany
+    public function learn_contents(): HasMany
     {
         return $this->hasMany(LearnContent::class, 'series_id');
     }

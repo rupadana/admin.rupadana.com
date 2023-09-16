@@ -24,6 +24,6 @@ class LearnContent extends Model
     ];
 
     protected $casts = [
-        'difficulty' => SerieLevel::class
+        'difficulty' => SerieLevel::class,
     ];
 }
